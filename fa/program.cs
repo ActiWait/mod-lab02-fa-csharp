@@ -12,7 +12,7 @@ namespace fans
         public string Name;
         public Dictionary<char, State> Transitions;
         public bool IsAcceptState;
-        public State(string? name, Dictionary<char, State>? transitions, bool isAcceptState)
+        public State(string name, Dictionary<char, State> transitions, bool isAcceptState)
         {
             if (name != null) {
                 Name = name;
