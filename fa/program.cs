@@ -14,11 +14,21 @@ namespace fans
         public bool IsAcceptState;
         public State(string? name, Dictionary<char, State>? transitions, bool isAcceptState)
         {
-            Name = name;
-            Transitions = transitions;
+            if (name != null) {
+                Name = name;
+            }
+            else Name = "";
+            if (transitions != null) {
+                Transitions = transitions;
+            }
+            else Transitions = new Dictionary<char, State> ();
             IsAcceptState = isAcceptState;
         }
-        public State() {}
+        public State() {
+            Name = "";
+            Transitions = new Dictionary<char, State> ();
+            IsAcceptState = false;
+        }
     }
 
     public class FA1
